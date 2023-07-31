@@ -4,13 +4,14 @@ import DeleteStyles from './DeleteStyles'
 
 
 
-const Delete = ({id, name, number, onRemoveContact})=>{
+const Delete = ({ id, name, number, onRemoveContact }) => {
+   const contactId = id || '';
     return(
-        <DeleteStyles key={id}>
+        <DeleteStyles key={contactId}>
             <p>
               {name}: {number}
             </p>
-        <button type='button' onClick={() => onRemoveContact(id)}>
+        <button type='button' onClick={() => onRemoveContact(contactId)}>
           <MdDeleteForever/>
         </button>
           </DeleteStyles>
@@ -18,7 +19,7 @@ const Delete = ({id, name, number, onRemoveContact})=>{
 }
 
 Delete.propTypes={
-    id: PropTypes.string.isRequired,
+    id: PropTypes.string,
     name: PropTypes.string.isRequired,
     number: PropTypes.string.isRequired,
     onRemoveContact: PropTypes.func.isRequired

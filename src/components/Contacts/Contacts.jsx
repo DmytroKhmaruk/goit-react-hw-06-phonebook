@@ -3,11 +3,12 @@ import ContactsStyles from './ContactsStyles';
 import Delete from '../Delete';
 
 function Contacts({ contact, removeContact }) {
+  const filteredContacts = contact || [];
   
   return (
     <>
       <ContactsStyles>
-        {contact.map(({ id, name, number }) => {
+        {filteredContacts.map(({ id, name, number }) => {
           return (
             <Delete
               key={id}
@@ -31,7 +32,7 @@ Contacts.propTypes = {
       name: PropTypes.string.isRequired,
       number: PropTypes.string.isRequired,
     }),
-  ).isRequired,
+  ),
   removeContact: PropTypes.func.isRequired,  
 };
 
