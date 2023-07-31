@@ -2,8 +2,6 @@ import PropTypes from 'prop-types';
 import { MdDeleteForever } from 'react-icons/md';
 import DeleteStyles from './DeleteStyles'
 
-
-
 const Delete = ({ id, name, number, onRemoveContact }) => {
    const contactId = id || '';
     return(
